@@ -1,0 +1,237 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	height: 768px;
+}
+
+a:visited, a:link
+{
+	text-decoration: none;
+}
+
+/* Navigation */
+
+a.navlink:visited, a.navlink:link
+{
+	color: #fff;
+}
+
+div.navtop
+{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	min-height: 39px;
+	margin: 0px auto;
+	background: #354b59;
+}
+
+ul.navlist
+{
+	list-style-type: none;
+}
+
+ul.navlist + li
+{
+	border-right: 1px solid #ccc;
+}
+ul.navlist > li
+{
+	float: left;
+	color: #fff;
+	padding: 10px 15px 10px;
+
+}
+
+/* Page Content */
+
+div.content
+{
+	margin-top: 71px;
+	min-width: 1024px;
+	height: 768px;
+}
+
+/* Message Navigation Panel */
+div.msgpanel
+{
+	position: relative;
+	border: 1px solid black;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	width: 200px;
+	height: 200px;
+	margin-left: 200px;
+	display: inline-block;
+	float: left;
+}
+div.msgpanel .header
+{
+	position: relative;
+	background: #869DAC;
+	width: 100%;
+	height: 35px;
+	border-top-left-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	-moz-border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-top-right-radius: 6px;
+	
+
+}
+
+div.msgpanel .header > input 
+{
+	float: left;
+	margin-top: 4px;
+	margin-left: 2px;
+}
+
+div.msgpanel .header > button
+{
+	margin-top: 3px;
+	float:	right;
+	margin-right: 3px;
+}
+
+div.msgpanelcontent 
+{
+	position: relative;
+	width: 100%;
+	height: 131px;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 10px;
+
+}
+
+div.msgpanel .msgpanelcontent .list
+{
+	list-style-type: none;
+}
+
+button#compose
+{
+	left: 0px;
+	margin-top: -18px;
+	margin-left: -37px;
+}
+
+div.msgcontent {
+	padding-left: 3px;
+}
+
+/* Messenging Content Panel */
+
+div.mainmsgcontent
+{
+	float: left;
+	width: 520px;
+	height: 75%;
+	border: 1px solid black;
+	margin-left: 30px;
+}
+
+div.mainmsgcontent  > ul
+{
+	list-style-type: none;
+}
+
+div.mainmsgcontent > ul > li
+{
+	float:	left;
+}
+
+table.msgTable
+{
+	margin-top: 9%;
+	margin-left: 1%;
+}
+
+/* Compose Message CSS */
+
+table.msgComposeTable
+{
+	margin-top: 2%;
+	margin-left: 3%;
+}
+
+textarea.msg
+{
+	margin-top: 3%;
+	margin-left: 3%;
+	resize: none;
+}
+
+div.msgBtns
+{
+	position: relative;
+	margin-left: 3%;
+}
+
+/* View Message */
+
+div.message
+{
+	margin-left: 4%;
+	margin-top: 3%;
+	width: 90%;
+	height: 75%;
+	word-wrap: break-word;
+}
+
+/* Login/Registration */
+
+div.loginpanel
+{
+	position: relative;
+	border: 1px solid black;
+	width: 400px;
+	height: 140px;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	margin: 0 auto;
+	margin-top: 300px;
+}
+
+div.loginBtns
+{
+	position: relative;
+	width: 41%;
+	height: 25px;
+	margin: 0 auto;
+	margin-top: 22px;
+}
+
+div.loginBtns > button:nth-child(1)
+{
+	float: left;
+}
+
+div.loginBtns > button:nth-child(2)
+{
+	float: right;
+}
+
+div#error_msg
+{
+	color: #ff0000;
+	margin-left: 30px;
+	margin-top: 3px;
+}
+
+div.completedForm
+{
+	position: relative;
+	width: 200px;
+	margin: 0px auto;
+	margin-top: 47px;
+	height: 49px;
+	color: green;
+	font-weight: bold;
+	text-align: center;
+}

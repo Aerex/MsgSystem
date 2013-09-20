@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Udacity - Messenging System</title>
+	</head>
+	<body>
+		<div class="navtop">
+			<ul class="navlist">
+				<li><a class="navlink" href="/#/inbox">Inbox</a></li>
+				<li><a class="navlink" href="/#/chat">Chat</a></li>
+				<li><a class="navlink" href="/#/login">Login</a></li>
+				<li><a class="navlink" href="/downloads/source.rar">Source</a></li>
+				<li><a class="navlink" href="#">User: {{user}}</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<div class="msgpanel">
+				<div class="mspanel header">
+					<input type="text"size="10" ng-model="search" value="value"/>
+					<button ng-click="searchEmail();">Search</button>
+				</div>
+				<div class ="msgpanelcontent">
+					<ul class ="msgpanel msgpanelcontent list">
+						<li><button id="compose" ng-click="composeMsg();">Compose</button></li>
+						<li><a href="#"ng-click="changeUrl(0);">Inbox</a></li>
+						<li><a href="#"ng-click="changeUrl(1);">Draft</a></li>
+						<li><a href="#"ng-click="changeUrl(2);">Sent</a></li>
+						<li><a href="#" ng-click="changeUrl(3);">Trash</a></li>
+
+					</ul>
+				</div>
+			</div>
+			<div ng-include src="template.url" class="mainmsgcontent">
+			</div>
+		</div>
+		 <!-- showmessages.html -->
+		 <script type="text/ng-template" id="show_messages.html">
+ 			<ul>
+				<li><button ng-click="draftMsgs();">Draft</button></li>
+				<li><button ng-click="markMsgRead();">Mark Msg Read</button></li>
+				<li><button ng-click="margMsgUnread();">Mark Msg Unread</button></li>
+				<li><button ng-click="deleteMsgs();">Delete</button></li>
+			</ul>
+			<table class="msgTable" cellspacing="0" cellpadding="0" width="98%" border="0">
+					<tr>
+						<td width="1%;"><input type="checkbox" /></td>
+						<td align="center">Sender</td>
+						<td align="center">Subject</td>
+						<td width="100px" align="center">Date</td>
+					</tr>
+					<tr highlightmsg readunread ng-repeat="msg in msgs">
+						<input type="hidden" value={{msg.index}}></input>
+						<td highlightmsg><input ng-change="addSelectedMsg({{msg.index}},msg);" type="checkbox" ng-model="msg.selected"></td>
+						<td id="a_{{msg.index}}"showmsg align="center">{{msg.sender}}</td>
+						<td id="b_{{msg.index}}"showmsg align="center">{{msg.shortSubject}}</td>
+						<td id="c_{{msg.index}}" showmsg align="center">{{msg.date}}</td>
+					</tr>
+			</table>
+  		</script>
+
+  		<script type="text/ng-template" id="compose_message.html">
+  			<table class="msgComposeTable" cellspacing="0" cellpadding="0" width="100%" border="0">
+					<tr>
+						<td>To:</td>
+						<td><input size="50" type="text" ng-model="msg.to"/></td>
+					</tr>
+					<tr>
+						<td>From:</td>
+						<td>{{user}}</td>
+					</tr>
+					<tr>
+						<td>Subject:</td>
+						<td><input size="50" type="text" ng-model="msg.subject"/></td>
+					</tr>
+			</table>
+			<textarea rows="25" cols="50" class="msg" ng-model="msg.message"></textarea>
+			<div class="msgBtns">
+				<button ng-click="sendMsg();">Submit</button>
+				<button ng-click="draftMsg();">Draft</button>
+			</div>
+  		</script>
+
+  		<script type="text/ng-template" id="preview_message.html">
+  			<table class="msgComposeTable" cellspacing="5" cellpadding="0" width="100%" border="0">
+					<tr>
+						<td width="3%;">To:</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>From:</td>
+						<td>{{viewMessage.sender}}</td>
+					</tr>
+					<tr>
+						<td>Subject:</td>
+						<td>{{viewMessage.subject}}</td>
+					</tr>
+			</table>
+			<div class="message">{{viewMessage.message}}</div>
+  		</script>
+
+  		<script type="text/ng-template" id="edit_message.html">
+  			<table class="msgComposeTable" cellspacing="5" cellpadding="0" width="100%" border="0">
+					<tr>
+						<td width="3%;">To:</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>From:</td>
+						<td>{{viewMessage.sender}}</td>
+					</tr>
+					<tr>
+						<td>Subject:</td>
+						<td>{{viewMessage.subject}}</td>
+					</tr>
+			</table>
+			<div class="message">{{viewMessage.message}}</div>
+			<div class="msgBtns">
+				<button ng-click="editMsg();">Edit</button>
+				<button style="display: none;" ng-click="saveMsg();">Save</button>
+			</div>
+  		</script>
+
+	</body>
+</html>

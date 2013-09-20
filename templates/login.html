@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Udacity - Login</title>
+	</head>
+	<body>
+		<div class="navtop">
+			<ul class="navlist">
+				<li><a class="navlink" href="/#/inbox">Inbox</a></li>
+				<li><a class="navlink" href="#/chat">Chat</a></li>
+				<li><a class="navlink" href="/#/login">Login</a></li>
+				<li><a class="navlink" href="/downloads/source.rar">Source</a></li>
+				<li><a class="navlink" href="#">User: {{user}}</a></li>
+			</ul>		
+		</div>
+		<div class="content">
+			<div ng-include src="template.url" class="loginpanel">	
+			</div>
+		</div>
+		<script type="text/ng-template" id="login_message.html">
+				<div id="error_msg"></div>
+					<table class="msgComposeTable" cellspacing="0" cellpadding="0" width="100%" border="0">
+						<tr>
+							<td>User</td>
+							<td><input type="text" ng-model="user"/></td>
+						</tr>
+						<tr>
+							<td>Password</td>
+							<td><input type="text" ng-model="password"/></td>
+						</tr>
+				</table>
+					<div class="loginBtns">
+						<button login>Login</button>
+						<button register>Register</button>
+					</div>
+  		</script>
+  		<script type="text/ng-template" id="register_message.html">
+  			<div class="completedForm">Thank you for Registering</div>
+  		</script>
+  		<script type="text/ng-template" id="logged_message.html">
+  			<div class="completedForm">Logged In!!</div>
+  		</script>
+  		
+		
+
+	</body>
+</html>
